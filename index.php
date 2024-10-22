@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <form action="" method="POST" name="formularz">
-        <input type="text" name="name" id="" placeholder="Imię">
-        <input type="text" name="lastname" id="" placeholder="Nazwisko">
-        <input type="number" name="grade" id="" placeholder="Ocena">
+    <form action="index.php" method="POST" name="formularz">
+        <input type="text" name="imie" id="" placeholder="Imię">
+        <input type="text" name="nazwisko" id="" placeholder="Nazwisko">
+        <input type="number" name="ocena" id="" placeholder="Ocena">
         <button value="dodaj" name="dodaj" type="submit">Zapisz</button>
     </form>
 
@@ -25,6 +25,13 @@
         </tr>
         <?php
         $polaczenie = mysqli_connect('localhost', 'root', '', 'szkola');
+
+        $imie = $_POST['imie'];
+        $nazwisko = $_POST['nazwisko'];
+        $ocena = $_POST['ocena'];
+
+        $dodajDane = "INSERT INTO `matematyka`(`Imie`, `Nazwisko`, `Ocena`) VALUES ('[value-2]','[value-3]','[value-4]')";
+
 
         $zapytanie = "SELECT * FROM `matematyka`";
 
