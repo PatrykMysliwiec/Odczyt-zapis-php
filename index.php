@@ -26,13 +26,16 @@
         <?php
         $polaczenie = mysqli_connect('localhost', 'root', '', 'szkola');
 
-        $imie = $_POST['imie'];
-        $nazwisko = $_POST['nazwisko'];
-        $ocena = $_POST['ocena'];
-
-        $dodajDane = "INSERT INTO `matematyka`(`Imie`, `Nazwisko`, `Ocena`) VALUES ('[value-2]','[value-3]','[value-4]')";
-
-
+        if (isset($_POST['imie']) && isset($_POST['nazwisko']) && isset($_POST['ocena'])) {
+            $imie = $_POST['imie'];
+            $nazwisko = $_POST['nazwisko'];
+            $ocena = $_POST['ocena'];
+    
+            $dodajDane = "INSERT INTO `matematyka`(`imie`, `nazwisko`, `ocena`) VALUES ('$imie','$nazwisko','$ocena')";
+    
+            mysqli_query($polaczenie, $dodajDane);
+        }
+        
         $zapytanie = "SELECT * FROM `matematyka`";
 
         $wynik = mysqli_query($polaczenie, $zapytanie);
