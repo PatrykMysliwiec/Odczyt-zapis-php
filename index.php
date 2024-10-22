@@ -15,12 +15,13 @@
         <button value="dodaj" name="dodaj" type="submit">Zapisz</button>
     </form>
 
-    <table>
+    <table border="1">
         <caption>Matematyka</caption>
         <tr>
             <th>ID</th>
             <th>Imie</th>
             <th>Nazwisko</th>
+            <th>Ocena</th>
         </tr>
 
         <?php
