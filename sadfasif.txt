@@ -1,0 +1,3 @@
+$imie = $_POST['name'];
+    $nazwisko = $_POST['lastname'];
+    $ocena = $_POST['grade'];

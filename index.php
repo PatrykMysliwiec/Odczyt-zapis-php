@@ -14,13 +14,24 @@
         <input type="number" name="grade" id="" placeholder="Ocena">
         <button value="dodaj" name="dodaj" type="submit">Zapisz</button>
     </form>
+
+    <table>
+        <caption>Matematyka</caption>
+        <tr>
+            <th>
+                
+            </th>
+        </tr>        
+    </table>
     <?php
     $polaczenie = mysqli_connect('localhost', 'root', '', 'szkola');
 
-    $imie = $_POST['name'];
-    $nazwisko = $_POST['lastname'];
-    $ocena = $_POST['grade'];
+    $zapytanie = "SELECT * FROM `matematyka`";
 
+    while ($matematyka = mysqli_fetch_assoc($wynik)) {
+        echo
+    }
+    
     ?>
 </body>
 
