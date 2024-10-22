@@ -48,21 +48,21 @@
     </table>
     <br><br><br><br><br>
     <h2>Wyświetlanie danych po nazwisku</h2>
-    <form action="index.php" method="POST" name="formularz">
+    <form action="" method="POST" name="formularz2">
         <input type="text" name="pobieranieNazwiska" id="" placeholder="Podaj nazwisko">
-        <button value="">Pokaż</button>
+        <button value="pokaż">Pokaż</button>
     </form>
     <ul>
         <?php
-        if (isset($_POST['Nazwisko'])) {
+        if (isset($_POST['pobieranieNazwiska'])) {
             $polaczenie = mysqli_connect('localhost', 'root', '', 'szkola');
             $nazwisko = $_POST['pobieranieNazwiska'];
             $zapytanie2 = "SELECT `Imie`, `Nazwisko`, `Ocena` FROM `matematyka` WHERE Nazwisko = '$nazwisko'";
 
             $wynik2 = mysqli_query($polaczenie, $zapytanie2);
 
-            while ($wiersz = mysqli_fetch_assoc($wynik2)) {
-                echo "<li>" . $wiersz['imie'] . " " . $wiersz['nazwisko'] . "</li>";
+            while ($wiersz2 = mysqli_fetch_assoc($wynik2)) {
+                echo "<li>" . $wiersz2['Imie'] . " " . $wiersz2['Nazwisko'] . "</li>";
             }
 
             mysqli_close($polaczenie);
