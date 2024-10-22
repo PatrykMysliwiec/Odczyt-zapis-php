@@ -23,7 +23,6 @@
             <th>Nazwisko</th>
             <th>Ocena</th>
         </tr>
-
         <?php
         $polaczenie = mysqli_connect('localhost', 'root', '', 'szkola');
 
@@ -31,11 +30,11 @@
 
         $wynik = mysqli_query($polaczenie, $zapytanie);
 
-        while ($matematyka = mysqli_fetch_assoc($wynik)) {
-            echo "<tr><td>" . $matematyka['ID'] . "</td><td>" . $matematyka['Imie'] . "</td><td>" . $matematyka['Nazwisko'] . "</td><td>" . $matematyka['Ocena'] . "</td></tr>";
+        while ($wiersz = mysqli_fetch_assoc($wynik)) {
+            echo "<tr><td>" . $wiersz['ID'] . "</td><td>" . $wiersz['Imie'] . "</td><td>" . $wiersz['Nazwisko'] . "</td><td>" . $wiersz['Ocena'] . "</td></tr>";
         }
 
-        mysqli_close($polaczenie)
+        mysqli_close($polaczenie);
         ?>
     </table>
 </body>
