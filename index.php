@@ -30,12 +30,12 @@
             $imie = $_POST['imie'];
             $nazwisko = $_POST['nazwisko'];
             $ocena = $_POST['ocena'];
-    
+
             $dodajDane = "INSERT INTO `matematyka`(`imie`, `nazwisko`, `ocena`) VALUES ('$imie','$nazwisko','$ocena')";
-    
+
             mysqli_query($polaczenie, $dodajDane);
         }
-        
+
         $zapytanie = "SELECT * FROM `matematyka`";
 
         $wynik = mysqli_query($polaczenie, $zapytanie);
@@ -43,7 +43,6 @@
         while ($wiersz = mysqli_fetch_assoc($wynik)) {
             echo "<tr><td>" . $wiersz['ID'] . "</td><td>" . $wiersz['Imie'] . "</td><td>" . $wiersz['Nazwisko'] . "</td><td>" . $wiersz['Ocena'] . "</td></tr>";
         }
-
         mysqli_close($polaczenie);
         ?>
     </table>
@@ -53,6 +52,23 @@
         <input type="text" name="pobieranieNazwiska" id="" placeholder="Podaj nazwisko">
         <button value="">Pokaż</button>
     </form>
+    <ul>
+        <?php
+        if (isset($_POST['Nazwisko'])) {
+            $polaczenie = mysqli_connect('localhost', 'root', '', 'szkola');
+            $nazwisko = $_POST['pobieranieNazwiska'];
+            $zapytanie2 = "SELECT `Imie`, `Nazwisko`, `Ocena` FROM `matematyka` WHERE Nazwisko = '$nazwisko'";
+
+            $wynik2 = mysqli_query($polaczenie, $zapytanie2);
+
+            while ($wiersz = mysqli_fetch_assoc($wynik2)) {
+                echo "<li>" . $wiersz['imie'] . " " . $wiersz['nazwisko'] . "</li>";
+            }
+
+            mysqli_close($polaczenie);
+        }
+        ?>
+    </ul>
 </body>
 
 </html>
