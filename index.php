@@ -18,9 +18,9 @@
     <table>
         <caption>Matematyka</caption>
         <tr>
-            <th>
-                
-            </th>
+            <th>ID</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
         </tr>        
     </table>
     <?php
@@ -29,7 +29,7 @@
     $zapytanie = "SELECT * FROM `matematyka`";
 
     while ($matematyka = mysqli_fetch_assoc($wynik)) {
-        echo
+        echo "<tr><td>" . $matematyka['ID'] . "<td></td>" . $matematyka['Imie'] . "</td><td>" . $matematyka 
     }
     
     ?>
