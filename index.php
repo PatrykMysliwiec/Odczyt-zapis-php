@@ -46,7 +46,7 @@
         mysqli_close($polaczenie);
         ?>
     </table>
-    <br><br><br><br><br>
+    <br><br>
     <h2>Wyświetlanie danych po nazwisku</h2>
     <form action="" method="POST" name="formularz2">
         <input type="text" name="pobieranieNazwiska" id="" placeholder="Podaj nazwisko">
